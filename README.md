@@ -56,7 +56,9 @@ docker exec -it  node-80 redis-cli -p 6380 --cluster create {node-80 ip}:6380  {
 实际执行命令和结果
 ```
 docker exec -it  node-80 redis-cli -p 6380 --cluster create 172.30.0.30:6380 172.30.0.31:6381 172.30.0.32:6382 172.30.0.33:6383 172.30.0.34:6384 172.30.0.35:6385 --cluster-replicas 1
+```
 
+```
 >>> Performing hash slots allocation on 6 nodes...
 Master[0] -> Slots 0 - 5460
 Master[1] -> Slots 5461 - 10922
