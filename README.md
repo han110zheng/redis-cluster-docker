@@ -54,6 +54,7 @@ docker exec -it gogs /bin/bash
 docker exec -it  node-80 redis-cli -p 6380 --cluster create {node-80 ip}:6380  {node-81 ip}:6381  {node-82 ip}:6382  {node-83 ip}:6383  {node-84 ip}:6384  {node-85 ip}:6385 --cluster-replicas 1
 ```
 实际执行命令和结果
+```
 docker exec -it  node-80 redis-cli -p 6380 --cluster create 172.30.0.30:6380 172.30.0.31:6381 172.30.0.32:6382 172.30.0.33:6383 172.30.0.34:6384 172.30.0.35:6385 --cluster-replicas 1
 
 >>> Performing hash slots allocation on 6 nodes...
@@ -104,3 +105,4 @@ S: 89346481a8fae9e510c7faf786da12bbd1e852b7 172.30.0.33:6383
 >>> Check for open slots...
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
+```
