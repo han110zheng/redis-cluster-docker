@@ -1,0 +1,100 @@
+version: "3"
+services: 
+  redis-cluster-6380:
+        image: redis
+        container_name: node-80
+        hostname: node-80
+        restart: always
+        ports:
+            - "6380:6380"
+        volumes:
+            - ./conf/redis-6380.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.30 
+
+  redis-cluster-6381:
+        image: redis
+        container_name: node-81
+        hostname: node-81
+        restart: always
+        ports:
+            - "6381:6381"
+        volumes:
+            - ./conf/redis-6381.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.31
+
+  redis-cluster-6382:
+        image: redis
+        container_name: node-82
+        hostname: node-82
+        restart: always
+        ports:
+            - "6382:6382"
+        volumes:
+            - ./conf/redis-6382.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.32
+
+  redis-cluster-6383:
+        image: redis
+        container_name: node-83
+        hostname: node-83
+        restart: always
+        ports:
+            - "6383:6383"
+        volumes:
+            - ./conf/redis-6383.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.33
+
+  redis-cluster-6384:
+        image: redis
+        container_name: node-84
+        hostname: node-84
+        restart: always
+        ports:
+            - "6384:6384"
+        volumes:
+            - ./conf/redis-6384.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.34
+
+  redis-cluster-6385:
+        image: redis
+        container_name: node-85
+        hostname: node-85
+        restart: always
+        ports:
+            - "6385:6385"
+        volumes:
+            - ./conf/redis-6385.conf:/usr/local/etc/redis/redis.conf
+            - ./log:/var/log/redis
+            - ./data:/data/redis
+        command: sh -c "redis-server /usr/local/etc/redis/redis.conf"
+        networks:
+            redis:
+              ipv4_address: 172.30.0.35
+networks:
+     redis:
+       external: true
