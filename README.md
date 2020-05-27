@@ -43,9 +43,8 @@ docker network create --driver=bridge --subnet=172.30.0.0/16 redis
 ### 执行安装
 docker-compose up -d
 
-
 ### 进入容器
-docker exec -it gogs /bin/bash
+docker exec -it node-80 /bin/bash
 
 # 集群快速搭建
 通过`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' node-80`可以查看各个节点在容器内网的ip，
