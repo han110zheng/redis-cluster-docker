@@ -5,16 +5,24 @@
 Docker撰写依赖于Docker引擎来完成任何有意义的工作，因此请确保在本地或远程安装了Docker引擎，具体取决于您的设置。
 
 ### 环境依赖安装
+```
 yum install -y yum-utils device-mapper-persistent-data lvm2 git vim net-tools
+```
 
 ### 安装containerd
+```
 yum  install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+```
 
 ### 安装 docker-ce-cli
+```
 yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpm
+```
 
 ### 安装 docker-ce
+```
 yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-19.03.8-3.el7.x86_64.rpm
+```
 
 ### 启动 docker
 systemctl enable --now docker
@@ -23,10 +31,14 @@ systemctl enable --now docker
 docker --version
 
 ### 安装Docker Compose
+```
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 
 ### 备用地址 
+```
 curl -L "https://github.com/han110zheng/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 
 ### Docker Compose对二进制文件应用可执行权限
 chmod +x /usr/local/bin/docker-compose
