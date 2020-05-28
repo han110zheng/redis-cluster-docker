@@ -52,18 +52,27 @@ chmod +x /usr/local/bin/docker-compose
 ### 如果docker-compose命令在安装后失败，请检查路径。您还可以创建到/usr/bin或路径中的任何其他目录的符号链接
 ```
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
 
 ### 查看Docker Compose版本是否安装
+```
 docker-compose --version
+```
 
 ### 启动docker-compose前先创建好网络
+```
 docker network create --driver=bridge --subnet=172.30.0.0/16 redis
+```
 
 ### 执行安装
+```
 docker-compose up -d
+```
 
 ### 进入容器
+```
 docker exec -it node-80 /bin/bash
+```
 
 # 集群快速搭建
 通过`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' node-80`可以查看各个节点在容器内网的ip，
@@ -71,6 +80,7 @@ docker exec -it node-80 /bin/bash
 ```
 docker exec -it  node-80 redis-cli -p 6380 --cluster create {node-80 ip}:6380  {node-81 ip}:6381  {node-82 ip}:6382  {node-83 ip}:6383  {node-84 ip}:6384  {node-85 ip}:6385 --cluster-replicas 1
 ```
+
 实际执行命令和结果
 ```
 docker exec -it  node-80 redis-cli -p 6380 --cluster create 172.30.0.30:6380 172.30.0.31:6381 172.30.0.32:6382 172.30.0.33:6383 172.30.0.34:6384 172.30.0.35:6385 --cluster-replicas 1
