@@ -25,10 +25,14 @@ yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages
 ```
 
 ### 启动 docker
+```
 systemctl enable --now docker
+```
 
 ### 查看安装版本
+```
 docker --version
+```
 
 ### 安装Docker Compose
 ```
@@ -41,9 +45,12 @@ curl -L "https://github.com/han110zheng/docker-compose-$(uname -s)-$(uname -m)" 
 ```
 
 ### Docker Compose对二进制文件应用可执行权限
+```
 chmod +x /usr/local/bin/docker-compose
+```
 
 ### 如果docker-compose命令在安装后失败，请检查路径。您还可以创建到/usr/bin或路径中的任何其他目录的符号链接
+```
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ### 查看Docker Compose版本是否安装
